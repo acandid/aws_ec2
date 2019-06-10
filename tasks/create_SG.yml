@@ -1,0 +1,26 @@
+---
+- name: create new group ssh port
+  ec2_group:
+    name: "{{ sg_group_name }}"
+    vpc_id: "{{ vpc_id_default }}"
+    description: "Allow Access"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    region: "{{ aws_region }}"
+    rules:
+      - proto: tcp
+        from_port: "{{ ssh_port }}"
+        to_port: "{{ ssh_port }}"
+        cidr_ip: "{{ cidr_ip_inbound }}"
+- name: Outbound Group
+  ec2_group:
+    name: "{{ outbound_name }}"
+    vpc_id: "{{ vpc_id_default }}"
+    description: "Outbound connections"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    region: "{{ aws_region }}"
+    rules_egress:
+      - proto: all
+        cidr_ip: "{{ cidr_ip_outbound }}"
+...

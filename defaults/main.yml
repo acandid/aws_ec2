@@ -1,0 +1,5 @@
+---
+# defaults file for aws_ec2
+#
+#Path salve new key file
+path:

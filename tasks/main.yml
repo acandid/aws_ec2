@@ -1,0 +1,19 @@
+---
+# tasks file for aws_ec2
+- name: Include credential file
+  include_vars: aws_credentials.yml
+#
+- name: Include AWS variables
+  include_vars: aws_vars.yml
+#
+- name: Create ssh key pair
+  import_tasks: create_ssh_keypair.yml
+  tags: kp
+#
+- name: Create New Security Group
+  import_tasks: create_SG.yml
+  tags: sg
+#
+- name: Create New Instance EC2
+  import_tasks: instance_ec2.yml
+  tags: inst

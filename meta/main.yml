@@ -1,0 +1,20 @@
+---
+dependencies: []
+#
+galaxy_info:
+  author: acandid
+  description: Create Instance EC2 in AWS
+  company: "Almir Candido"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.7
+  platforms:
+    - name: aws
+      versions:
+        - ec2
+#
+  galaxy_tags:
+    - aws
+    - cloud
+    - amazon
+#
+allow_duplicates: true

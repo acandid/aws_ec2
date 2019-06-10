@@ -1,0 +1,44 @@
+---
+#Current VPC
+vpc_id_default:
+#
+# Instance Type
+instance_type:
+#
+# Instance Tags
+#Name
+first_name:
+#name
+second_name:
+#environment
+environment_name:
+#
+# AWS Region
+aws_region:
+#
+# Defaults Subnets
+subnet1:
+#
+subnet2:
+#
+subnet3:
+#
+#Images
+aws_image:
+#
+#Key name
+keypair_name:
+#
+#Security Group
+sg_group_name:
+#
+# SSH port
+ssh_port: 22
+#
+# cidr_ip inbound
+cidr_ip_inbound: '0.0.0.0/0'
+#
+#cidr_ip outbound
+cidr_ip_outbound: '0.0.0.0/0'
+outbound_name: 
+#

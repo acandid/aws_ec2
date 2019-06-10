@@ -1,0 +1,24 @@
+---
+- name: Create Instance EC2
+  ec2:
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    aws_region: "{{ aws_region }}"
+    key_name: "{{ keypair_name }}"
+    group:
+      - "{{ sg_group_name }}"
+    instance_type: "{{ instance_type }}"
+    instance_tags:
+      Name: "{{ first_name }}"
+      name: "{{ second_name }}"
+      env: "{{ environment_name }}"
+    image: "{{ aws_image }}"
+    wait: yes
+    wait_timeout: 500
+    monitoring: no
+    assign_public_ip: yes
+    vpc_subnet_id: "{{ subnet1 }}"
+  register: ec2
+- debug:
+    var: ec2    
+... 
