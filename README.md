@@ -74,11 +74,17 @@ Example Playbook
 ----------------
 
 ---
+
 - hosts: local
+
   connection: local
+  
   gather_facts: false
+  
   roles:
+  
     - /path/aws_ec2
+    
 ...
 
 
